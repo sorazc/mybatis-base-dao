@@ -1,5 +1,6 @@
 package cn.zc.test.entity;
 
+import cn.zc.base.dao.annotation.Generation;
 import cn.zc.base.dao.annotation.Id;
 import cn.zc.base.dao.annotation.Table;
 
@@ -12,6 +13,7 @@ public class User implements Serializable{
 
 	@Transient
 	private static final long serialVersionUID = 1L;
+	@Generation
 	@Id
 	private String id;
     private String username;

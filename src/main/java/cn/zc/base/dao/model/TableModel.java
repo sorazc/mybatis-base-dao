@@ -1,4 +1,4 @@
-package cn.zc.base.dao.Model;
+package cn.zc.base.dao.model;
 
 import java.util.Set;
 

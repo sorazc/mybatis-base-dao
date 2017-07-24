@@ -3,18 +3,14 @@ package cn.zc.base.dao.annotation;
 public enum GenerationType {
 
     /**
-     * 自增主键
+     * 自增
      */
     AUTO,
 
     /**
-     * uuid主键
+     * uuid
      */
-    UUID,
+    UUID;
 
-    /**
-     * 自定义主键
-     */
-    CUSTOM;
 
 }
