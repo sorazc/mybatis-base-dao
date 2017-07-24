@@ -1,5 +1,8 @@
 package cn.zc.base.dao;
 
+import org.apache.ibatis.annotations.SelectProvider;
+import cn.zc.base.dao.provider.SqlProvider;
+
 import java.util.List;
 
 /**
@@ -15,6 +18,7 @@ public interface BaseDao<T, PK> {
 
     Integer delete(T t);
 
-
+    @SelectProvider(type = SqlProvider.class, method = "queryById")
+    T queryById(String id);
 
 }
