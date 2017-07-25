@@ -2,6 +2,8 @@ package cn.zc.base.dao.helper;
 
 import cn.zc.base.dao.annotation.Table;
 import cn.zc.base.dao.utils.ClassUtil;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -11,13 +13,15 @@ import java.util.Set;
  */
 public final class ClassHelper {
 
+    private static final Logger LOGGER = LoggerFactory.getLogger(ClassHelper.class);
+
     /**
      * all class under base package
      */
     private static final Set<Class<?>> CLASS_SET = new HashSet<>();
 
     public ClassHelper(String basePackage) {
-        System.out.print("===================class helper init ===================");
+        LOGGER.info("===================class helper init ===================");
         ClassUtil.getClassSet(basePackage, CLASS_SET);
     }
 

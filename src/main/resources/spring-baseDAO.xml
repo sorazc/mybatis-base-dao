@@ -11,5 +11,5 @@
 	<bean class="cn.zc.base.dao.helper.ClassHelper" id="classHelper" scope="singleton">
 		<constructor-arg  value="cn.zc.test.entity" />
 	</bean>
-
+	<bean class="cn.zc.base.dao.helper.TableHelper" id="tableHelper" scope="singleton" />
 </beans>

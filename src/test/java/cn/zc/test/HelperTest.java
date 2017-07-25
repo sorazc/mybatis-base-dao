@@ -18,11 +18,6 @@ public class HelperTest {
 
     private static Set<Class<?>> classSet;
 
-    static {
-        classSet = ClassHelper.getClassSet();
-        System.out.print("==============" + classSet + "===============");
-    }
-
     @Test
     public void main(){
         System.out.print("==============" + classSet + "===============");
