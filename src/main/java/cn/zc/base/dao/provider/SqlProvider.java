@@ -15,6 +15,7 @@ public class SqlProvider {
     private static final Logger LOGGER = LoggerFactory.getLogger(SqlProvider.class);
 
     public String queryById(final String id){
+        LOGGER.info("================= sqlRrovider");
         return new SQL(){{
             SELECT("*");
             FROM("user");
