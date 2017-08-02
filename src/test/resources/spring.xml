@@ -67,7 +67,7 @@
 	</bean>
 
 	<!-- mapper扫描地址 -->
-	<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+	<bean class="cn.zc.base.dao.scanner.MapperScannerConfigurer">
 		<property name="basePackage" value="cn.zc.test.dao" />
 	</bean>
 </beans>

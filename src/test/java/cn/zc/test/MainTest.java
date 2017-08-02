@@ -22,9 +22,7 @@ public class MainTest {
     @Test
     public void count(){
         Assert.assertNotNull(userDao);
-        LOGGER.info(userDao.count().toString());
-        Assert.assertNotNull(userDao.queryById("fed594bd-0948-11e7-8d61-448a5b337b12"));
-        Assert.assertNotNull(userDao.queryById("fed594bd-0948-11e7-8d61-448a5b337b12"));
+        LOGGER.info(userDao.toString());
         Assert.assertNotNull(userDao.queryById("fed594bd-0948-11e7-8d61-448a5b337b12"));
 
     }

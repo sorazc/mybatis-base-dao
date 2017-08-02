@@ -1,5 +1,6 @@
 package cn.zc.base.dao.scanner;
 
+import cn.zc.base.dao.helper.BaseDaoHelper;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.config.BeanDefinition;
 import org.springframework.beans.factory.support.BeanDefinitionRegistry;
@@ -7,14 +8,19 @@ import org.springframework.beans.factory.support.GenericBeanDefinition;
 
 public class MapperScannerConfigurer extends org.mybatis.spring.mapper.MapperScannerConfigurer {
 
+    private BaseDaoHelper baseDaoHelper = new BaseDaoHelper();
+
     @Override
     public void setMarkerInterface(Class<?> superClass) {
+        System.out.println(superClass.getName());
         super.setMarkerInterface(superClass);
+        baseDaoHelper.addClass(superClass);
     }
 
     @Override
     public void postProcessBeanDefinitionRegistry(BeanDefinitionRegistry registry) {
         super.postProcessBeanDefinitionRegistry(registry);
+        System.out.println(111111);
         String[] names = registry.getBeanDefinitionNames();
         GenericBeanDefinition definition;
         for (String name : names) {
@@ -24,7 +30,7 @@ public class MapperScannerConfigurer extends org.mybatis.spring.mapper.MapperSca
                 if (StringUtils.isNotEmpty(definition.getBeanClassName())
                         && definition.getBeanClassName().equals("org.mybatis.spring.mapper.MapperFactoryBean")) {
                     definition.setBeanClass(MapperFactoryBean.class);
-                    //definition.getPropertyValues().add("mapperHelper", this.mapperHelper);
+                    definition.getPropertyValues().add("baseDaoHelper", this.baseDaoHelper);
                 }
             }
         }
