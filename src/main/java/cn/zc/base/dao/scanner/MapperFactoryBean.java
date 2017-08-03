@@ -20,5 +20,9 @@ public class MapperFactoryBean<T> extends org.mybatis.spring.mapper.MapperFactor
     @Override
     protected void checkDaoConfig() {
         super.checkDaoConfig();
+        if (baseDaoHelper.isExtendBaseDao(getObjectType())) {
+            baseDaoHelper.registryDao(getSqlSession(), getObjectType());
+        }
     }
+
 }

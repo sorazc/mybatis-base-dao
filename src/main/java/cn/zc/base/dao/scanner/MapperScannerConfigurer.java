@@ -12,15 +12,13 @@ public class MapperScannerConfigurer extends org.mybatis.spring.mapper.MapperSca
 
     @Override
     public void setMarkerInterface(Class<?> superClass) {
-        System.out.println(superClass.getName());
         super.setMarkerInterface(superClass);
-        baseDaoHelper.addClass(superClass);
+        //baseDaoHelper.addClass(superClass);
     }
 
     @Override
     public void postProcessBeanDefinitionRegistry(BeanDefinitionRegistry registry) {
         super.postProcessBeanDefinitionRegistry(registry);
-        System.out.println(111111);
         String[] names = registry.getBeanDefinitionNames();
         GenericBeanDefinition definition;
         for (String name : names) {
